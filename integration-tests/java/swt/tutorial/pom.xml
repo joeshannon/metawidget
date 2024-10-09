@@ -18,7 +18,7 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>${swt.groupId}</groupId>
+			<groupId>org.eclipse.platform</groupId>
 			<artifactId>${swt.artifactId}</artifactId>
 		</dependency>
 		<dependency>

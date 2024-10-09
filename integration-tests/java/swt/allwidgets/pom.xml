@@ -18,28 +18,28 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.equinox</groupId>
+			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.equinox.common</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.core</groupId>
-			<artifactId>databinding</artifactId>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.databinding</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.core.databinding</groupId>
-			<artifactId>beans</artifactId>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.databinding.beans</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.core.databinding</groupId>
-			<artifactId>observable</artifactId>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.databinding.observable</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.core.databinding</groupId>
-			<artifactId>property</artifactId>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.databinding.property</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.ibm.icu</groupId>
-			<artifactId>base</artifactId>
+			<artifactId>icu4j</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -51,7 +51,7 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>${swt.groupId}</groupId>
+			<groupId>org.eclipse.platform</groupId>
 			<artifactId>${swt.artifactId}</artifactId>
 			<scope>test</scope>
 		</dependency>

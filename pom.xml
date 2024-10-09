@@ -29,12 +29,10 @@
 		<maven.compiler.debuglevel>lines,vars,source</maven.compiler.debuglevel>
 		<maven.compiler.optimize>true</maven.compiler.optimize>
 
-		<!-- Default SWT to 32-bit -->
-
-		<swt.groupId>org.eclipse.swt.win32.win32</swt.groupId>
-		<swt.artifactId>x86</swt.artifactId>
+		<!-- Default SWT to Windows x86_64 -->
+		<swt.artifactId>org.eclipse.swt.win32.win32.x86_64</swt.artifactId>
 		<!-- 3.4 and above avoid the swt.dll loading problem -->
-		<swt.version>3.6.0-v3659</swt.version>
+		<swt.version>3.114.100</swt.version>
 
 	</properties>
 
@@ -119,24 +117,7 @@
 				</os>
 			</activation>
 			<properties>
-				<swt.groupId>org.eclipse.swt.win32.win32</swt.groupId>
-				<swt.artifactId>x86_64</swt.artifactId>
-				<swt.version>3.6.2</swt.version>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>win32_amd64</id>
-			<activation>
-				<os>
-					<family>windows</family>
-					<arch>amd64</arch>
-				</os>
-			</activation>
-			<properties>
-				<swt.groupId>org.eclipse.swt.win32.win32</swt.groupId>
-				<swt.artifactId>x86_64</swt.artifactId>
-				<swt.version>3.6.2</swt.version>
+				<swt.artifactId>org.eclipse.swt.win32.win32.x86_64</swt.artifactId>
 			</properties>
 		</profile>
 
@@ -149,24 +130,7 @@
 				</os>
 			</activation>
 			<properties>
-				<swt.groupId>org.eclipse.swt.gtk.linux</swt.groupId>
-				<swt.artifactId>x86_64</swt.artifactId>
-				<swt.version>3.6.2</swt.version>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>linux_amd64</id>
-			<activation>
-				<os>
-					<family>unix</family>
-					<arch>amd64</arch>
-				</os>
-			</activation>
-			<properties>
-				<swt.groupId>org.eclipse.swt.gtk.linux</swt.groupId>
-				<swt.artifactId>x86_64</swt.artifactId>
-				<swt.version>3.6.2</swt.version>
+				<swt.artifactId>org.eclipse.swt.gtk.linux.x86_64</swt.artifactId>
 			</properties>
 		</profile>
 
@@ -636,9 +600,9 @@
 				<scope>test</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.eclipse.equinox</groupId>
+				<groupId>org.eclipse.platform</groupId>
 				<artifactId>org.eclipse.equinox.common</artifactId>
-				<version>3.6.0.v20100503</version>
+				<version>3.12.0</version>
 				<scope>provided</scope>
 				<exclusions>
 					<exclusion>
@@ -648,39 +612,45 @@
 				</exclusions>
 			</dependency>
 			<dependency>
-				<groupId>${swt.groupId}</groupId>
+				<groupId>org.eclipse.platform</groupId>
 				<artifactId>${swt.artifactId}</artifactId>
 				<version>${swt.version}</version>
 				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<artifactId>org.eclipse.swt</artifactId>
+						<groupId>org.eclipse.platform</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
-				<groupId>org.eclipse.core</groupId>
-				<artifactId>databinding</artifactId>
-				<version>1.2.0</version>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.core.databinding</artifactId>
+				<version>1.9.0</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.eclipse.core.databinding</groupId>
-				<artifactId>beans</artifactId>
-				<version>1.2.0</version>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.core.databinding.beans</artifactId>
+				<version>1.6.100</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.eclipse.core.databinding</groupId>
-				<artifactId>observable</artifactId>
-				<version>1.2.0</version>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.core.databinding.observable</artifactId>
+				<version>1.9.0</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.eclipse.core.databinding</groupId>
-				<artifactId>property</artifactId>
-				<version>1.2.0</version>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.core.databinding.property</artifactId>
+				<version>1.8.0</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.ibm.icu</groupId>
-				<artifactId>base</artifactId>
-				<version>3.4.5</version>
+				<artifactId>icu4j</artifactId>
+				<version>64.2</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>

@@ -103,7 +103,7 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>${swt.groupId}</groupId>
+			<groupId>org.eclipse.platform</groupId>
 			<artifactId>${swt.artifactId}</artifactId>
 			<scope>runtime</scope>
 		</dependency>
