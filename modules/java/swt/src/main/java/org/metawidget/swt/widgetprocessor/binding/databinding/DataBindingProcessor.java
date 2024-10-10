@@ -20,8 +20,8 @@ import java.util.Set;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;
-import org.eclipse.core.databinding.beans.BeanProperties;
-import org.eclipse.core.databinding.beans.PojoObservables;
+import org.eclipse.core.databinding.beans.typed.BeanProperties;
+import org.eclipse.core.databinding.beans.typed.PojoProperties;
 import org.eclipse.core.databinding.conversion.IConverter;
 import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
@@ -153,7 +153,7 @@ public class DataBindingProcessor
 
 		// (use PojoObservables so that the model needn't implement PropertyChangeListener)
 
-		IObservableValue observeModel = PojoObservables.observeValue( realm, toInspect, propertyName );
+		IObservableValue observeModel = PojoProperties.value( propertyName ).observe( realm, toInspect );
 		UpdateValueStrategy modelToTarget = new UpdateValueStrategy( UpdateValueStrategy.POLICY_ON_REQUEST );
 
 		// Add converters
